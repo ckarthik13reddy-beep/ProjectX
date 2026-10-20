@@ -3,40 +3,10 @@
   "services": {
     "app": {
       "root": ".",
-      "runtime": "container",
-      "bindings": [
-        {
-          "type": "service",
-          "service": "server",
-          "format": "url",
-          "env": "PAPERCLIP_SERVER_URL"
-        }
-      ]
-    },
-    "paperclip-runner": {
-      "root": "packages/paperclip-runner",
-      "framework": "vite"
-    },
-    "server": {
-      "root": "server",
-      "framework": "vite"
-    },
-    "agent-shim": {
-      "root": "tools/agent-shim",
-      "runtime": "go"
-    },
-    "ui": {
-      "root": "ui",
-      "framework": "vite"
+      "runtime": "container"
     }
   },
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": {
-        "service": "server"
-      }
-    },
     {
       "source": "/(.*)",
       "destination": {
